@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://cheungtifan.github.com/sitemap.xml 
+Sitemap: http://tifan.net/sitemap.xml 
