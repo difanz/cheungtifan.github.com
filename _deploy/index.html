@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>tifan</title>
+  <meta name="author" content="tifan">
+
+  
+  <meta name="description" content="就这样吧，开始用 Octopress 替代以前的各种不靠谱博客系统。 自然的，Aluminum Blog 被抛弃了。评论全部干掉，文章转移了一部分。
+">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://tifan.net/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="tifan" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">tifan</a></h1>
+  
+    <h2>没意思的东西</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:tifan.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/03/kai-shi-shi-yong-octopress/">开始使用Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-03T17:06:00-08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>就这样吧，开始用 Octopress 替代以前的各种不靠谱博客系统。</p>
+
+<p>自然的，Aluminum Blog 被抛弃了。评论全部干掉，文章转移了一部分。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/03/kai-shi-shi-yong-octopress/">开始使用Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-03T17:06:00-08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>就这样吧，开始用 Octopress 替代以前的各种不靠谱博客系统。</p>
+
+<p>自然的，Aluminum Blog 被抛弃了。评论全部干掉，文章转移了一部分。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/22/thoughts-about-spambots/">抓恶意爬虫以及防止恶意爬虫的一点想法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-22T23:21:33-07:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>爬虫很讨厌。</p>
+
+<p>为什么这么讨厌爬虫呢？是因为这玩意儿会让我的缓存全部失效。你想，平时大部分用户都是访问网站首页的几篇文章而已，突然来个爬虫，爬掉你的整个网站。例如爱范儿，几千篇文章，一篇一篇的爬下去，吃 CPU 不说，爬到后面，缓存干脆命中不到，只好去查询 MySQL，查询是要费时间的，也是要跑 TCP 的， overhead 很大的亲。如果爬的频率一高，机器说不定就会宕机了。</p>
+
+<p>为了防止爬虫，我的工作也没少做。一是按时分析 HTTP access log，看什么不正常的东西，二是看 collectd，看图形有什么不正常的，三就是封不对的 User-agent。下面是 nginx 封掉的一些讨厌的 bot:</p>
+
+<pre><code>if ($http_user_agent ~ "Rome") {
+    return 403;
+}
+if ($http_user_agent = "Mozilla/4.0") {
+    return 444;
+}
+if ($http_user_agent ~ "linkcrawler") {
+    return 403;
+}
+if ($http_user_agent ~ "larbin") {
+    return 403;
+}
+</code></pre>
+
+<p>另外，今天曝光网宿科技的一个 bot 121.9.213.36, user-agent: &#8220;Mozilla/8.0 (compatible; MSIE 8.0; Windows 7&#8221; (自己还少了一个括号)。</p>
+
+<p>但是上面的都是事后诸葛亮，出事儿的时候根本没用。于是，想到了一点也许可以解决 spambot 的方法。</p>
+
+<p>首先，我们应该分析 spambot 的行为。让我们思考，bot 的作者会怎么写一个 bot 呢？</p>
+
+<p>Approach I: 输入一个页面，分析页面内所有链接，加入链接到一个 hashmap 中，爬过的写一个标志位，没爬过的分发到爬虫线程。</p>
+
+<p>Approach II: 输入一个 URL pattern，直接生成待爬取页面列表，爬。</p>
+
+<p>不管是哪种 approach，他们的目的都是获取网页内容。而这和普通用户有什么区别呢？</p>
+
+<p>区别 I: Bot 不大可能请求 CSS 等资源，而正常用户会。</p>
+
+<p>区别 II: Bot 不大可能去执行 JavaScript (当然现在也有 headless 的基于浏览器的 bot)</p>
+
+<p>区别 III: Bot 的访问趋势是不同于人的，人的正常浏览习惯是在首页浏览，看到感兴趣的，打开一篇，看完继续翻页，而机器则不是这样子的</p>
+
+<p>有这三个 major 区别，我们很容易在 Web 服务器上阻断 spambot。当然，如果使用 headless 的浏览器，区别 I 就会被干掉。区别 II 仍然有效，待会儿说。</p>
+
+<p>对于简单的 bot，我们可以使用 nginx 外加模块，连接 memcached 计数的办法干掉。比如某个 ip 访问页面，计数器加 5，访问 CSS/JS 则减 1，半小时以后 invalidate。一般的用户很快就会被清到 0，因为一般页面上 CSS/JS 数量会远远超过 5 per page，何况我们还有图片。</p>
+
+<p>对于简单的 bot，我们还可以使用 JavaScript 请求 AJAX，访问某个页面，这个页面将 memcached 中该 ip 的记录标志为可信。</p>
+
+<p>对于 headless browser 类型的 bot，我们还是有办法解决的。</p>
+
+<ol>
+<li>创建浏览器对象需要内存。他们会希望页面加载结束后，立即抓取内容，加载下一个页面，我们可以使用 JavaScript 延时 AJAX 的方法标志</li>
+<li>headless browser 也希望尽快的抓取内容，不妨对人的访问速度进行 profile，如果某用户的 pattern 不符合 profile，则标记为可疑</li>
+</ol>
+
+
+<p>当然，bot 也是有好有坏的，比如我们希望 Google bot 等尽快抓取，因此可能还需要实现某个白名单（注意 User-agent 不代表一切，还有 source IP）。这样一来，大部分 spambot 就会没办法抓取。至于某些花了很大精力抓取内容的 bot，我只想说，最近的文章可以用 RSS 获取全文，您何苦呢？！</p>
+
+<p>最后，对抗 bot 的战争是永远不会结束的，上面仅仅是对可能的反 bot 方法进行初步讨论。遇到疑似 bot 的访问时，不妨提供 recaptcha 让它填写。另外，一些人工智能算法也有可能可以 apply 进来。但是，我们要牢记，我们的目的只是挡住大部分 bot，不影响站点的正常工作而已。After all，如果 launch 了一大把分布的 bot，不断的抓取，这种行为应该视为 DDoS 的一种。对于 DDoS，目前没有什么太好的办法，因此我也就不继续讨论了。</p>
+
+<p>本文的部分研究可以在我之前的一篇论文中找到。<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6127462">IEEE Xplore</a></p>
+
+<p><a href="http://difan.org.cn/BlogIMG/Botdetection.pdf">A Distributed Network-Sensor Based Intrusion Detection Framework in Enterprise Networks</a>, Difan Zhang, Wei Yu, and Rommie Hardy. Free Local Copy.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/08/disappointing-aliyun/">令人失望的阿里云</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-08T05:09:32-07:00" pubdate data-updated="true">Jun 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>阿里云果然烂透了，从用的第一天起，就充满了杯具。</p>
+
+<p>爱范儿迁移到阿里云的第一天早晨9点，阿里云就开始挂了，无奈之下，切换回了日本Linode，看了看，似乎是我自己的配置问题，后来因为人太多，10M小水管不够用就没人可以访问了，于是我们上了又拍云cdn，感觉效果不错，访问速度快了很多，也启用了 cdn.ifanr.cn 的 cdn 域名。</p>
+
+<p>于是，修 PHP，改 Wordpress，又搬了回去，似乎问题没有了，团队成员也都很开心，速度变快了&#8212;-除了我，成天被 GFW RESET…</p>
+
+<p>某天，发现 PHP 确实有问题，于是让 PHP 吐个核看看，写到磁盘里。我们用了 APC 做 Object Cache，512M 的 shm，当然这些也会被 dump 出来，8个 PHP-FPM 进程一共是 4GB。写 core 不要紧，一看才知道 IO 居然这么差，写 core 的时候 IOWAIT 居然到了 100%，愣是挂了半个小时，这半个小时 ssh 都登陆不进去，后来从 collectd 里看到，居然 loadavg 到了三十几，所有的 CPU 全都在等 IO，所有的 read() 全都被 block 住了&#8211;你妹！</p>
+
+<p>我有个坏毛病，没事儿爱输入 sync 玩，某次输入一看，怎么这么久！</p>
+
+<pre><code>[L:root@ifanr-cn] ~# time sync
+sync  0.00s user 0.02s system 0% cpu 4.927 total
+</code></pre>
+
+<p>于是，跑个 hdparm 看了看，一看不要紧&#8212;-</p>
+
+<p>  [L:root@ifanr-cn] ~# hdparm -t /dev/xvdb1
+  /dev/xvdb1:
+  Timing buffered disk reads:  74 MB in  3.11 seconds =  23.76 MB/se`</p>
+
+<p>那么，我们来 iostat -x 看看吧</p>
+
+<pre><code>avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.84    0.00    0.63   35.53    0.00   62.00
+    Device:         rrqm/s   wrqm/s     r/s     w/s   rsec/s   wsec/s avgrq-sz avgqu-sz   await  svctm  %util
+    xvda              0.00   810.00    0.00  202.50     0.00 16136.00    79.68   143.56  719.75   4.94 100.00
+    xvdb              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+    scd0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+
+    avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+               1.36    0.00    0.49   28.39    0.06   69.70
+
+    Device:         rrqm/s   wrqm/s     r/s     w/s   rsec/s   wsec/s avgrq-sz avgqu-sz   await  svctm  %util
+    xvda              0.00   748.00    0.00  198.00     0.00 15776.00    79.68   143.96  746.70   5.05 100.00
+    xvdb              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+    scd0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+</code></pre>
+
+<p>上面的数据是正常数据哦亲！</p>
+
+<p>无奈之下，<a href="http://www.weibo.com/1039929634/ynqS5zk99">发了条微博</a>，一看回复，原来大家都有这毛病！</p>
+
+<p>本来觉得阿里还算是个正儿八经的公司，现在一看，连个盘柜都不舍得买么？！就连我校的好多年前买来的日立光纤存储都能到 400MB/s 好不好（虽然有 RAID）！</p>
+
+<p>吐槽完毕，反正阿里云和IBM一样，以忽悠为主。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/12/14/a-tale-of-screen-ram/">A Tale of Screen RAM</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-14T16:16:14-08:00" pubdate data-updated="true">Dec 14<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>考完托福，从 @kDolphin 那里看到了小米提出的新概念&#8212;-屏幕 RAM。作为一个对嵌入式一知半解，也玩过单片机的<del>化学</del><del>计算机</del>好人修电脑系学生，我对此概念十分不解&#8212;-莫非来美国大农村呆了一年就这么赶不上科技的潮流了？</p>
+
+<p>于是，根据小米等各种论坛的线索，我大致归纳了&#8221;屏幕RAM&#8221;的几个特点：</p>
+
+<ul>
+<li>这是一种缓存机制，使得 GPU 只需要运算 delta 值。在没有此机制的屏幕上绘图要求 GPU 不断的工作，产生图形</li>
+<li>这种机制可以得到性能的提升，原因是 GPU 不需要 concentrace on 不断的渲染相同的图像</li>
+<li>这种机制可以节约电量</li>
+<li>这种机制主要应用在高端手机上</li>
+<li>这种机制的成本是 80 元人民币，约合 $15</li>
+</ul>
+
+
+<p>暂且抛开这种机制在一边，我们看一看 LCD 的显示原理。</p>
+
+<p>不管是 TTF 还是较早的 STN 屏幕，其都是由一个一个的亚像素（彩色显示器）/栅格（灰度显示器）组成的。给液晶分子加上一个电压，液晶分子将改变其光透射特性，这可能 result in 颜色的改变（对于彩色显示器），或者透光度的改变（对于黑白显示器）。外加电场消失时，透光度恢复。不管是什么技术，他们的基本原理都是这样的。</p>
+
+<p>如果有一些嵌入式开发经验，可能将 LCD 看作一组寄存器的概念更能接受&#8212;-实际上，我们无法对 LCD 直接进行操作，我们操作的对象是 LCD 控制器，控制器控制各个像素/栅格的状态，这也是为了节省宝贵的 IO 端口。可以将 LCD 作为一组寄存器操作的 LCD 面板叫做 &#8220;智能 LCD 面板&#8221;。这种面板自带的控制器中含有 FrameBuffer (帧缓存) 甚至渲染引擎。我们在嵌入式开发中常用的 1602 屏幕就自带了显示引擎、字库以及帧缓存。而有一些其他的屏幕，例如 S3C2440 开发板中常用的某些 LCD 屏幕就没有自己的帧缓存、显示引擎，这种屏幕叫做&#8221;哑面板&#8221;。哑面板需要外置的 LCD 控制器，而智能面板不需要额外的 LCD 控制器。</p>
+
+<p>帧缓存这个名词听起来有一点点绕口，其实它更通俗的名字叫做&#8221;显存&#8221;。显示引擎预先渲染一些内容，并将其保存在显存中，如果显存太小，则显示控制器将不断的运行，有可能导致的是因为运算能力较差产生 lag。另一方面，带有 LCD 控制器的面板可以接受高级指令，也不需要外界（这里的系统定义为 LCD）的额外控制（除了时钟源）就可以保持显示内容。显然，这种 LCD 因为内置了显示引擎而造成成本的增加。然而，哑面板虽然成本低，但需要外界不断的刷新内容而保持屏幕的正常显示，这无疑将增加外界的计算压力。</p>
+
+<p>这里，作为读者，你可能会自然的想到，这与上面小米的 assertion match exactly. 那么，小米说的是实话么？其实，不尽然。</p>
+
+<p>我们都知道，现代计算机中的一个重要组成部分叫做显示适配器，俗称显卡。手机等嵌入式设备也不例外，但是由于其空间受限制，一般更倾向于 SoC 设计。内置 LCD 控制器的智能 LCD 似乎很适合，但是我们知道，2008年之后的手机市场已经开始很荒谬的开始了性能竞争&#8212;-例如我现在使用的 iPhone 4S 的主频是 800MHz&#8212;-作为对比，2009 年我购买的 HTC Dream 的主频是 384MHz，2007 年我购买的 Motorola Rokr E6 则是 313MHz 的主频。当然，上面是废话。LCD 控制器的内置&#8221;显卡&#8221;毫无疑问相比于英伟达等专业厂商的显卡是很弱的。尽管哑面板没有帧缓存，要求不断的刷新屏幕，并使用了更多的总线带宽（显示器的带宽总是很大的），但是&#8212;-无论如何，这些工作都是需要做的，不管是液晶面板做了，还是面板外进行的。</p>
+
+<p>小米手机的 GPU，根据公共可得的数据，是 Adreno 220。我查阅了此款 GPU 的资料，得知这是一款 SoC 的 GPU 方案，内置 SRAM FrameBuffer。当然了，苹果的 A5 处理器一样是 SoC 设计，也内置了 FrameBuffer。另一方面，根据魅族公布的资料，魅族 MX 的 GPU 也是 SoC 实现的 Cortex-A9 + Mali-400MP GPU。这款片上同样集成了一定数量的内存作为帧缓存使用，根据 ARM 的介绍，其最大支持的帧缓存大小为单帧4096x4096。</p>
+
+<p>即使说到这里，可能还是有一些读者不理解他们有什么太大的差距，在这里，我直接给出结论以及推导结论的 reasoning 过程：</p>
+
+<p>Whereas the goal of displaying graphics should be archived, there must be some particular chipset computing for the LCD display panel</p>
+
+<p>The computation can either be on the LCD controller with a smart panel or on the host with a dump panel;</p>
+
+<p>Both phones have a built-in Graphical Processing Unit which fills the framebuffer, embedded in the chipset;</p>
+
+<p>Thus, both phone functions in the exactly the same way with different chipsets.</p>
+
+<p>由于填充 framebuffer 的过程必须由内置的 GPU 完成，则显示器将显示来自 framebuffer 的内容。既然两种手机都显示来自 framebuffer 的内容，那么不管他们选择什么样的液晶面板，都会达到一样的效果，那就是帧缓存在液晶屏幕之外。</p>
+
+<p>作为初步结论，我认为，屏幕RAM应该是指的液晶面板内的 FrameBuffer。在当前的运行模式下，其存在的意义不大，在硬件抽象层之上，操作系统是不需要关心这种实现的。尽管哑面板有着种种缺点，但因为目前的设计，实际上智能面板的&#8221;智能部分&#8221;已经由更加智能的智能手机片内的 GPU 所完成。因此，小米抛出的&#8221;帧缓存&#8221;是比较没有讨论意义的。</p>
+
+<p>从另一个方面上看，小米的争论其实也是无效的争论。倘若小米的论据和结论都是有效的，这对于一个正常的企业是不可忍受的&#8212;-种种迹象表明魅族并不是一个打一枪就走人的公司，其更多的是很负责任的公司，从各种细节就可以看出。我只购买过一个魅族 M6 音乐播放器，非常耐用，而且服务不错。80 元的成本，相比 3000 元的定价来说，如果不是利润已经被压缩到不可以接受的地步，正常的企业是不会为此而生产有严重缺陷的产品的。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/11/27/starting-from-nonhexie-Android-in-China/">从不和谐的 Android 市场开始扯</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-27T11:43:31-08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近Android是越来越火了。火的背后我们也看到了很多的不和谐。</p>
+
+<p>09年的时候，我开始使用的 Android 手机。那是一个黑暗的时代&#8212;-当时我在使用中国移动的手机卡，流量有限，每月 80MB，20大洋。好在墙并没这么厉害，拿到手机以后，上 Market 下载 Google Pinyin，输入中文一切正常，倒也可以用了。不过，因为 Android 当时刚刚出现不久，中国基本没用户，移动互联网基本靠 WAP，内容基本是 WML，我需要一个支持 WML 的浏览器。想过写一个 WML Transformer 到 HTML，最终没写，因此上网看电脑网站舍不得，只能上手机校内、推特。想用 QQ? 没门。</p>
+
+<p>于是，有了基于 Java 模拟器 (MicroEmulator) 的 Opera Mini，还可以直接穿墙。用的不亦乐乎。</p>
+
+<p>后来，Android 手机果然越来越流行了。我个人感觉是因为没有 license fee: 任何手机厂商直接拿来源代码，写点驱动，就是一款新机器，拚配置就卖得掉&#8212;-买 Android 的多半是技术悾，配置就是一切，于是我们看到了各种大屏幕、双核 CPU，独立显卡（汗），硬解码芯片（硬解RMVB看XXX神马的），以及&#8212;-越来越短的待机时间。G1 的电池已经足够悲剧，悲剧的是似乎后来的 Android 手机用同样容量的电池待机时间还不如 G1。上大学时，兜里4块电池是常事儿，特别是出去旅游的时候。</p>
+
+<p>后来，Android 手机越来越便宜了&#8212;-MTK发力，显然就有便宜手机了。不过，似乎中国市场的 Android 机器有点奇怪&#8212;-没有 Google Apps。从默认搜索引擎到输入法再到地图、邮件、市场，统统没有 Google 的份儿。Instead, 我们看到<a href="http://www.cnbeta.com/articles/117298.htm">默认搜索引擎是某中国第一大搜索引擎</a>，以及该公司的地图、以及某些知名盗版 Android 应用讨论区(HiXXX以及GXXX等等)的 Chinese Market Clone&#8230; 叫 localization 也好，叫山寨也好&#8212;-反正也就这么着了，你们能怎么样？！</p>
+
+<p>然后，现在是11年末了。美国已经满大街除了 Android 就是 iPhone 了，中国，似乎除了<del>大部分</del>不开化的群众仍然买挪鸡鸭之外，除了<del>一小撮坏分子</del> iPhone 就是 Android 了。于是，我们看到，以前在 feature phone 市场里常见的伎俩，比如 app 自动吸费，假杀毒软件纷纷出现在了 Android 平台上(我历来是把挪鸡鸭的 Symbian 手机当 feature phone 看的)。</p>
+
+<hr />
+
+<p>除了开发者品质问题，我们是不是还应该在自己身上考虑考虑呢？</p>
+
+<ol>
+<li>Android 手机用户有几个人买过 App 呢？</li>
+<li>Android Market 在中国是否可用</li>
+<li>有几个人拥有国际信用卡？</li>
+<li>究竟有几个人愿意花1～2美元买 App 呢？</li>
+</ol>
+
+
+<p>对于上面两个问题，我在国内时，是没有国际信用卡的，支付完全不方便，直到来了美国才买的正版软件&#8212;-当然，在那之前没用过什么盗版的，只不过有些 App 必须用 MarketEnabler 下载。</p>
+
+<p>中国移动的 ARPU 大约是 50 人民币，联通的更少一些。1块美金的 App 大约占他们月费的 1/10，而且这一块美金在去年我出国之前是足够吃一顿饭的，恐怕大部分用户还是不愿意花钱买 app 的吧。</p>
+
+<p>其实，似乎中国人从来没有过买软件的意识&#8212;-看不到摸不着，凭什么付费？&#8221;高端用户&#8221;？扯淡吧。某次，某老爸开高级饭店的富二代问我怎么给 iPhone 越狱，答曰不会（这是真不会）。她说，不越狱怎么装软件？我说，上 AppStore 买啊，你又不差钱。答曰&#8212;-我又没毛病，凭什么买软件，买了也什么都看不到。</p>
+
+<p>上面一句话是不是严重挫败了各位程序员宅男的感情？没错儿，你们，包括我，写的东西，很多中国人看到了，都会说&#8212;-这玩意儿凭什么卖钱？</p>
+
+<p>&#8212;-但是宅男也要吃饭啊</p>
+
+<p>&#8212;-别搞笑了，宅男哪需要吃饭？</p>
+
+<p>于是，扯远了。</p>
+
+<hr />
+
+<p>扯回来，继续说。</p>
+
+<p>中国人不怕流氓的。</p>
+
+<p>// 于是流氓越来越多</p>
+
+<p>// 于是 Android 市场就变成我们今天看到的这样了</p>
+
+<hr />
+
+<p>最后，送给民主斗士们一点话：</p>
+
+<p>看不惯社会对吧，想民主对吧？你不想想，你走过后门没有，你潜规则过没有？如果有，别老吵着要民主。别以为你自己行恶影响不到全局&#8212;-成万上亿的你组成了整个神奇的中国社会。</p>
+
+<p>下回说民主之前，先想想自己。公民社会不是挡箭牌，所有人都遵守游戏规则了，你根本不用想要公民社会&#8212;-因为这就是。</p>
+
+<p>话说回来，抱怨社会的 loser 居多。</p>
+
+<hr />
+
+<p>又想写点东西：最近新浪微博什么的流行排比句，抱怨社会不公&#8212;-都是枪手，给钱的。当然，写这些东西的，loser 居多。</p>
+
+<p>-EOF-</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/24/osqdu-new-domain/">OSQDU域名永久更改为www.osqdu.org</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-24T14:14:13-07:00" pubdate data-updated="true">Sep 24<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>昨天晚上，我突然得知，OSQDU 的域名罹难，状态已经变成了 clientHold 。打电话给中国万网，答复是需要提交身份证，等待漫长的审核。</p>
+
+<p>国内的政策，很无奈，我又没办法提交身份证件，于是这域名就似乎拿不回来了。最后，Frank注册了10年的www.osqdu.org。</p>
+
+<p>cn域名，非常的不靠谱。没办法，用我这个PR还算高的博客，想办法先重新收录了 OSQDU 的网站吧。老域名，也许就真没戏了。不过，有感情阿。成立了OSQDU不久就注册了这个域名了……</p>
+
+<p>鄙视CNNIC一万遍。</p>
+
+<p>将原来的 whois 信息贴上来，纪念一下。</p>
+
+<pre><code>Domain Name: osqdu.org
+ROID: 20080830s10051s18327277-cn
+Domain Status: clientHold
+Registrant Organization: 青岛大学网络中心
+Registrant Name: 张涤凡
+Administrative Email: cheungtifan@gmail.com
+Sponsoring Registrar: 北京万网志成科技有限公司
+Name Server:ns1.dnspod.net
+Name Server:ns2.dnspod.net
+Name Server:ns3.dnspod.net
+Name Server:ns4.dnspod.net
+Name Server:ns5.dnspod.net
+Name Server:ns6.dnspod.net
+Registration Date: 2008-08-30 19:59
+Expiration Date: 2011-08-30 19:59
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/18/ibm-server-sucks/">IBM服务器——谁用谁知道</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-18T13:16:30-07:00" pubdate data-updated="true">Jun 18<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>用电脑这么多年，还真没见过这样的电脑，更别说服务器了。</p>
+
+<p><img src="http://difan.org.cn/BlogIMG/x255ov1.gif" alt="" /></p>
+
+<p>这是一台IBM eServer xSeries 255，1个4核Xeon MP，7个U的大家伙。有个Adaptec AIC-7899 SCSI控制器，装了12块300GB硬盘，两个光卡一个电卡，电卡似乎还是Broadcom 5703的破卡。内存呢，标配了4×256MB DDR1，后来买了8×1GB DDR1内存，总共应该是9GB&#8212;-插上确实是9GB，然后过两天一看，成8GB了，再过两天，4GB，然后呢，2GB，最后呢，1GB。</p>
+
+<p>于是，拔内存。似乎确实解决了一阵子事情，能稳定在4GB了，然后呢……</p>
+
+<p>我们就用它做3P下载站的服务器了。青岛大学内网用户访问http://dl.osqdu.org/可以访问3P下载站。似乎开始的时候一切正常。拆下了RAID卡。用Solaris嘛，当然做了RAIDZ。杯具就从此开始了。大家都知道zfs吃内存的，于是机器就三天两头重启。每次打开KVM，总显示着一大堆ZFS相关的错误。于是，不得已，转移数据，折腾了好几个移动硬盘和服务器，终于将大约2TB的数据折腾出来了。然后，配上了UFS，毕竟UFS这么多年了，肯定没问题的，接受了时间的考验。BTW，fat能用这么长时间纯属意外，当然微软最后偷了点VMS 70年代的技术，搞出来一个&#8221;New Technology File System&#8221; aka NTFS&#8230;.</p>
+
+<p>随着数据的不断增多，有时候我在另外的几台服务器上下载完文件，用sftp传进去的时候，会发现突然就stall了。可以ping，可以ssh，但死活无法看到终端。跑到KVM上，输入用户名，按回车以后，可以看到键盘回显，但是不管怎样都没法看到Password: 提示符，更不要说是登陆了。因为不懂怎么调试Solaris，只好……后来就启动了KMDB，直接F1-A（或者是Stop-A），::quit重启了。</p>
+
+<p>接着呢，我接管了服务器。这一天注定是杯具开始的一天。几乎每天，我都要登陆到KVM里，输入F1-A，敲::quit回车y回车，等着启动起来。每次的错误似乎都不一样。下面是两张示例，告诉大家都是怎么死机的。</p>
+
+<p><img src="http://difan.org.cn/BlogIMG/dead1.png" alt="Dead 1" /></p>
+
+<p><img src="http://difan.org.cn/BlogIMG/dead2.png" alt="Dead 2" /></p>
+
+<p><img src="http://difan.org.cn/BlogIMG/dead3.jpeg" alt="Dead 3" /></p>
+
+<p>大概每次的死机都会不一样……</p>
+
+<p>因此，我由衷的感叹……</p>
+
+<p>X86是不稳定，但这么不稳定的还真没见过，特别这还是服务器！</p>
+
+<p>所以呢……</p>
+
+<p>有预算买服务器的，还是不要买IBM的了吧。</p>
+
+<p>BTW, 青岛大学的别的IBM服务器也不怎么样，今天去机房给这个可怜的机器换内存的时候，发现老师又在折腾另外某台可怜的IBM。看到可以运行好多好多年的Sun服务器，Sun Fire V880，还有Enterprise 250……</p>
+
+<p>都是UNIX厂商，差距咋就这么大呢？</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/21/yantai-presentation/">OSQDU烟台大学讲座活动总结</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-21T12:26:25-07:00" pubdate data-updated="true">Apr 21<span>st</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>OSQDU中国：上周末，承蒙烟台大学计算学院软件协会邀请，OSQDU成员、Firefox校园大使张涤凡前去进行开源软件宣传讲座。讲座受到了谋智网络(Mozilla Online)的大力协助。 第一场讲座开始在4月17日上午，演讲的主要内容有初识开源软件、UNIX哲学与计算机和对计算机专业新生的一些建议。演讲共持续了大约2个小时。期间，同学们饶有兴趣的对开源软件的历史、发展进行了提问。</p>
+
+<p><a href="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0401.jpg"><img src="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0401.jpg" alt="introduction" /></a></p>
+
+<p>第二场讲座也是本次活动的重头戏，张涤凡介绍了如何从头开发一个Firefox插件。</p>
+
+<p><a href="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0402.jpg"><img src="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0402.jpg" alt="alex" /></a></p>
+
+<p>Alex正在介绍如何开发插件</p>
+
+<p><a href="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0403.jpg"><img src="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0403.jpg" alt="students" /></a></p>
+
+<p><a href="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0405.jpg"><img src="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0405.jpg" alt="students" /></a></p>
+
+<p>聚精会神的同学们</p>
+
+<p>随后，Alex在会场上连接网络，使用了几个例子，介绍了一些高效信息检索以及搜索引擎高级使用的方法。 另外，本次讲座的幻灯片以及源代码也在OSQDU的网站上发布了，下载地址是<a href="http://blog.osqdu.org/osqdu_public/hello.tar.gz">http://blog.osqdu.org/osqdu_public/hello.tar.gz</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/07/htc-dream-bricked-spl/">刷SPL致死的T-Mobile G1怎样恢复加速传感器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-07T15:42:04-08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>手贱不可怕，怕的是手贱以后没有办法挽救。</p>
+
+<p>八月份我买了一台T-Mobile G1，当然看中的是Linux操作系统和强大的硬件配置，没想到问题也不是太少，总体来讲不太适合生产用手机，倒是适合折腾。</p>
+
+<p>于是我在9月底折腾了刷SPL，当然radio没有刷成功，否则也就没有本文了。于是华丽的有了一块独一无二的砖头&#8211;启动不起来了。没办法，我可不要一块两千块钱的砖头，发深圳修吧。</p>
+
+<p>260大元换了一个NAND芯片（业内人士成为<em>字库</em>），说的是加速度感应器没问题。拿到后确实没问题，但是固件是HiAPK.com的固件，我不是太喜欢这个固件，主要是慢，命令行工具少。选用了cynaogen mod 4.0.2，感觉比较稳定，以及他的recovery 1.4。刷了以后，加速度感应没有了。打电话给JS，JS说是不是刷机了，告诉我需要重新发去&#8221;做数据&#8221;。</p>
+
+<p>我觉得不对头，反正硬件没坏，软件问题我这个半路出家的玩嵌入式Linux怎么也能搞定了吧，于是开始去xda-developer翻帖子。一个月的时间，中间还有个GRE(这也是我好久不写Blog的原因)，足够让我查到相关资料。</p>
+
+<p>查资料的结果就是/system/bin/akmd是传感器的daemon process(还有个用户，compass)；/data/misc/akmd_set.txt是akmd的配置文件，可以删除这个文件重新校准。但是我这里并没有这个文件，也许是因为换NAND的原因吧。说句题外话，我觉得根本不用换NAND Flash ROM的，重新插到编程器上烧录就好了吧。。。该死的Death SPL。nandroid显示的是一串0而不是以前的HT什么东西。估计是兼容性问题还是什么的，但是固件在那里放着的，JS确实可以&#8221;做数据&#8221;。我不甘心花来回40的顺丰快递换一个文件，于是决定自己折腾折腾。</p>
+
+<p>反正硬件都是一样的，软件问题啦。最先怀疑的就是akmd，看见有些帖子说可以换老版本的akmd，抓紧去找了个HTC的1.1的ROM，提取出来了akmd，在console里替换掉，运行GPS Status果然可以正确的指南针了。考虑到众多G1用户有这样的问题，我把它发来了自己的服务器上。点<a href="http://www.huaxueba.com/alex/akmd.gz">这个链接</a>就可以下载了。</p>
+
+<p>文件信息：</p>
+
+<pre><code>akmd.gz 48358 bytes
+
+akmd
+md5sum  517a87a4e6caa5e66f0520c68dcb7c0e   
+sha1sum b741df4aa075115192fe2659c472cd1f6bcd84a0&lt;
+</code></pre>
+
+<p>下载回来文件，用gzip一类的文件（不见得你是用UNIX/Linux的，7-zip也不错）解压，拷贝到sd卡第一个分区。在console下（Home+Power开机，用cm-1.4的recovery选择Console）执行下面的命令：</p>
+
+<pre><code>mount -a
+cd /system/bin
+cp ./akmd /sdcard/akmd_old  
+cp /sdcard/akmd /system/bin  
+tar cf /sdcard/misc.tar /data/misc/  
+rm /data/misc/akmd_set.txt  
+rm /data/misc/rild*  
+reboot
+</code></pre>
+
+<p>试试你的加速度感应器吧！</p>
+
+<p>关键字：</p>
+
+<p>Android Google G1 换字库 重力感应 SPL刷死 akmd</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/03/kai-shi-shi-yong-octopress/">开始使用Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/03/kai-shi-shi-yong-octopress/">开始使用Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/22/thoughts-about-spambots/">抓恶意爬虫以及防止恶意爬虫的一点想法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/08/disappointing-aliyun/">令人失望的阿里云</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/14/a-tale-of-screen-ram/">A Tale of Screen RAM</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("tifan", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/tifan" class="twitter-follow-button" data-show-count="false">Follow @tifan</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - tifan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
