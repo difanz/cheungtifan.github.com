@@ -4,7 +4,7 @@
   <title><![CDATA[tifan]]></title>
   <link href="http://tifan.net/atom.xml" rel="self"/>
   <link href="http://tifan.net/"/>
-  <updated>2013-01-03T17:57:47-08:00</updated>
+  <updated>2013-01-03T18:00:18-08:00</updated>
   <id>http://tifan.net/</id>
   <author>
     <name><![CDATA[tifan]]></name>
@@ -32,6 +32,9 @@
     <content type="html"><![CDATA[<p>爬虫很讨厌。</p>
 
 <p>为什么这么讨厌爬虫呢？是因为这玩意儿会让我的缓存全部失效。你想，平时大部分用户都是访问网站首页的几篇文章而已，突然来个爬虫，爬掉你的整个网站。例如爱范儿，几千篇文章，一篇一篇的爬下去，吃 CPU 不说，爬到后面，缓存干脆命中不到，只好去查询 MySQL，查询是要费时间的，也是要跑 TCP 的， overhead 很大的亲。如果爬的频率一高，机器说不定就会宕机了。</p>
+
+<!-- more -->
+
 
 <p>为了防止爬虫，我的工作也没少做。一是按时分析 HTTP access log，看什么不正常的东西，二是看 collectd，看图形有什么不正常的，三就是封不对的 User-agent。下面是 nginx 封掉的一些讨厌的 bot:</p>
 
@@ -102,6 +105,9 @@ if ($http_user_agent ~ "larbin") {
 
 <p>于是，修 PHP，改 Wordpress，又搬了回去，似乎问题没有了，团队成员也都很开心，速度变快了&#8212;-除了我，成天被 GFW RESET…</p>
 
+<!-- more -->
+
+
 <p>某天，发现 PHP 确实有问题，于是让 PHP 吐个核看看，写到磁盘里。我们用了 APC 做 Object Cache，512M 的 shm，当然这些也会被 dump 出来，8个 PHP-FPM 进程一共是 4GB。写 core 不要紧，一看才知道 IO 居然这么差，写 core 的时候 IOWAIT 居然到了 100%，愣是挂了半个小时，这半个小时 ssh 都登陆不进去，后来从 collectd 里看到，居然 loadavg 到了三十几，所有的 CPU 全都在等 IO，所有的 read() 全都被 block 住了&#8211;你妹！</p>
 
 <p>我有个坏毛病，没事儿爱输入 sync 玩，某次输入一看，怎么这么久！</p>
@@ -162,6 +168,9 @@ sync  0.00s user 0.02s system 0% cpu 4.927 total
 </ul>
 
 
+<!-- more -->
+
+
 <p>暂且抛开这种机制在一边，我们看一看 LCD 的显示原理。</p>
 
 <p>不管是 TTF 还是较早的 STN 屏幕，其都是由一个一个的亚像素（彩色显示器）/栅格（灰度显示器）组成的。给液晶分子加上一个电压，液晶分子将改变其光透射特性，这可能 result in 颜色的改变（对于彩色显示器），或者透光度的改变（对于黑白显示器）。外加电场消失时，透光度恢复。不管是什么技术，他们的基本原理都是这样的。</p>
@@ -202,6 +211,9 @@ sync  0.00s user 0.02s system 0% cpu 4.927 total
     <content type="html"><![CDATA[<p>最近Android是越来越火了。火的背后我们也看到了很多的不和谐。</p>
 
 <p>09年的时候，我开始使用的 Android 手机。那是一个黑暗的时代&#8212;-当时我在使用中国移动的手机卡，流量有限，每月 80MB，20大洋。好在墙并没这么厉害，拿到手机以后，上 Market 下载 Google Pinyin，输入中文一切正常，倒也可以用了。不过，因为 Android 当时刚刚出现不久，中国基本没用户，移动互联网基本靠 WAP，内容基本是 WML，我需要一个支持 WML 的浏览器。想过写一个 WML Transformer 到 HTML，最终没写，因此上网看电脑网站舍不得，只能上手机校内、推特。想用 QQ? 没门。</p>
+
+<!-- more -->
+
 
 <p>于是，有了基于 Java 模拟器 (MicroEmulator) 的 Opera Mini，还可以直接穿墙。用的不亦乐乎。</p>
 
@@ -274,6 +286,9 @@ sync  0.00s user 0.02s system 0% cpu 4.927 total
 
 <p>国内的政策，很无奈，我又没办法提交身份证件，于是这域名就似乎拿不回来了。最后，Frank注册了10年的www.osqdu.org。</p>
 
+<!-- more -->
+
+
 <p>cn域名，非常的不靠谱。没办法，用我这个PR还算高的博客，想办法先重新收录了 OSQDU 的网站吧。老域名，也许就真没戏了。不过，有感情阿。成立了OSQDU不久就注册了这个域名了……</p>
 
 <p>鄙视CNNIC一万遍。</p>
@@ -312,6 +327,9 @@ Expiration Date: 2011-08-30 19:59
 
 <p>于是，拔内存。似乎确实解决了一阵子事情，能稳定在4GB了，然后呢……</p>
 
+<!-- more -->
+
+
 <p>我们就用它做3P下载站的服务器了。青岛大学内网用户访问http://dl.osqdu.org/可以访问3P下载站。似乎开始的时候一切正常。拆下了RAID卡。用Solaris嘛，当然做了RAIDZ。杯具就从此开始了。大家都知道zfs吃内存的，于是机器就三天两头重启。每次打开KVM，总显示着一大堆ZFS相关的错误。于是，不得已，转移数据，折腾了好几个移动硬盘和服务器，终于将大约2TB的数据折腾出来了。然后，配上了UFS，毕竟UFS这么多年了，肯定没问题的，接受了时间的考验。BTW，fat能用这么长时间纯属意外，当然微软最后偷了点VMS 70年代的技术，搞出来一个&#8221;New Technology File System&#8221; aka NTFS&#8230;.</p>
 
 <p>随着数据的不断增多，有时候我在另外的几台服务器上下载完文件，用sftp传进去的时候，会发现突然就stall了。可以ping，可以ssh，但死活无法看到终端。跑到KVM上，输入用户名，按回车以后，可以看到键盘回显，但是不管怎样都没法看到Password: 提示符，更不要说是登陆了。因为不懂怎么调试Solaris，只好……后来就启动了KMDB，直接F1-A（或者是Stop-A），::quit重启了。</p>
@@ -347,6 +365,9 @@ Expiration Date: 2011-08-30 19:59
     <id>http://tifan.net/blog/2010/04/21/yantai-presentation</id>
     <content type="html"><![CDATA[<p>OSQDU中国：上周末，承蒙烟台大学计算学院软件协会邀请，OSQDU成员、Firefox校园大使张涤凡前去进行开源软件宣传讲座。讲座受到了谋智网络(Mozilla Online)的大力协助。 第一场讲座开始在4月17日上午，演讲的主要内容有初识开源软件、UNIX哲学与计算机和对计算机专业新生的一些建议。演讲共持续了大约2个小时。期间，同学们饶有兴趣的对开源软件的历史、发展进行了提问。</p>
 
+<!-- more -->
+
+
 <p><a href="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0401.jpg"><img src="http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0401.jpg" alt="introduction" /></a></p>
 
 <p>第二场讲座也是本次活动的重头戏，张涤凡介绍了如何从头开发一个Firefox插件。</p>
@@ -371,6 +392,9 @@ Expiration Date: 2011-08-30 19:59
     <updated>2009-11-07T15:42:04-08:00</updated>
     <id>http://tifan.net/blog/2009/11/07/htc-dream-bricked-spl</id>
     <content type="html"><![CDATA[<p>手贱不可怕，怕的是手贱以后没有办法挽救。</p>
+
+<!-- more -->
+
 
 <p>八月份我买了一台T-Mobile G1，当然看中的是Linux操作系统和强大的硬件配置，没想到问题也不是太少，总体来讲不太适合生产用手机，倒是适合折腾。</p>
 
@@ -419,6 +443,9 @@ reboot
     <updated>2008-09-21T14:32:30-07:00</updated>
     <id>http://tifan.net/blog/2008/09/21/BNDZ26</id>
     <content type="html"><![CDATA[<p>今天，在青岛大学举行的&#8221;世界软件自由日&#8221;是由青岛 Linux 用户组(Qingdao LUG)和OSQDU主办，其他主办单位包括北京Linux 用户组(BLUG)和中国开源软件推进联盟(COPU)，信息产业部软件与集成电路促进中心(CSIP)，青岛大学青年学生会。主要赞助商有SUN Microsystems, OpenSUSE等。</p>
+
+<!-- more -->
+
 
 <p>&#8220;世界软件自由日&#8221;（SFD Software Freedom Day）&#8221; 源自Ubuntu 计划，是一个全球性庆祝&#8221;自由和开源软件&#8221;(FOSS)的日子。这次活动的目标旨在向中国年轻一代和他们的指导者传播日常生活中使用&#8221;自由和开源软件&#8221;的好处。</p>
 

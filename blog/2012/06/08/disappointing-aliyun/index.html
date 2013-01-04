@@ -99,6 +99,9 @@
 
 <p>于是，修 PHP，改 Wordpress，又搬了回去，似乎问题没有了，团队成员也都很开心，速度变快了&#8212;-除了我，成天被 GFW RESET…</p>
 
+<!-- more -->
+
+
 <p>某天，发现 PHP 确实有问题，于是让 PHP 吐个核看看，写到磁盘里。我们用了 APC 做 Object Cache，512M 的 shm，当然这些也会被 dump 出来，8个 PHP-FPM 进程一共是 4GB。写 core 不要紧，一看才知道 IO 居然这么差，写 core 的时候 IOWAIT 居然到了 100%，愣是挂了半个小时，这半个小时 ssh 都登陆不进去，后来从 collectd 里看到，居然 loadavg 到了三十几，所有的 CPU 全都在等 IO，所有的 read() 全都被 block 住了&#8211;你妹！</p>
 
 <p>我有个坏毛病，没事儿爱输入 sync 玩，某次输入一看，怎么这么久！</p>
