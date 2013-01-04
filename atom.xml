@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[tifan.net]]></title>
+  <title><![CDATA[tifan]]></title>
   <link href="http://tifan.net/atom.xml" rel="self"/>
   <link href="http://tifan.net/"/>
-  <updated>2013-01-03T15:25:22-08:00</updated>
+  <updated>2013-01-03T17:03:11-08:00</updated>
   <id>http://tifan.net/</id>
   <author>
     <name><![CDATA[tifan]]></name>
