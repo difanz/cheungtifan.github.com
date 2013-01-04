@@ -1,5 +1,5 @@
 ---
-comments: false
+comments: true
 date: 2010-04-21 19:26:25
 layout: post
 published: true
@@ -8,6 +8,8 @@ title: OSQDU烟台大学讲座活动总结
 ---
 
 OSQDU中国：上周末，承蒙烟台大学计算学院软件协会邀请，OSQDU成员、Firefox校园大使张涤凡前去进行开源软件宣传讲座。讲座受到了谋智网络(Mozilla Online)的大力协助。 第一场讲座开始在4月17日上午，演讲的主要内容有初识开源软件、UNIX哲学与计算机和对计算机专业新生的一些建议。演讲共持续了大约2个小时。期间，同学们饶有兴趣的对开源软件的历史、发展进行了提问。
+
+<!-- more -->
 
 [![introduction](http://blog.osqdu.org/wp-content/uploads/2010/04/IMG_0401.jpg)](http://blog.osqdu.org/wp-content/uploads/2010/04/IMG\_0401.jpg)
 

@@ -86,6 +86,8 @@
 
 <time datetime="2012-06-08T05:09:32-07:00" pubdate data-updated="true">Jun 8<span>th</span>, 2012</time>
         
+         | <a href="#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -96,6 +98,9 @@
 <p>爱范儿迁移到阿里云的第一天早晨9点，阿里云就开始挂了，无奈之下，切换回了日本Linode，看了看，似乎是我自己的配置问题，后来因为人太多，10M小水管不够用就没人可以访问了，于是我们上了又拍云cdn，感觉效果不错，访问速度快了很多，也启用了 cdn.ifanr.cn 的 cdn 域名。</p>
 
 <p>于是，修 PHP，改 Wordpress，又搬了回去，似乎问题没有了，团队成员也都很开心，速度变快了&#8212;-除了我，成天被 GFW RESET…</p>
+
+<!-- more -->
+
 
 <p>某天，发现 PHP 确实有问题，于是让 PHP 吐个核看看，写到磁盘里。我们用了 APC 做 Object Cache，512M 的 shm，当然这些也会被 dump 出来，8个 PHP-FPM 进程一共是 4GB。写 core 不要紧，一看才知道 IO 居然这么差，写 core 的时候 IOWAIT 居然到了 100%，愣是挂了半个小时，这半个小时 ssh 都登陆不进去，后来从 collectd 里看到，居然 loadavg 到了三十几，所有的 CPU 全都在等 IO，所有的 read() 全都被 block 住了&#8211;你妹！</p>
 
@@ -184,6 +189,12 @@ sync  0.00s user 0.02s system 0% cpu 4.927 total
   </footer>
 </article>
 
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
 </div>
 
 <aside class="sidebar">
@@ -191,10 +202,6 @@ sync  0.00s user 0.02s system 0% cpu 4.927 total
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/01/03/kai-shi-shi-yong-octopress/">开始使用Octopress</a>
-      </li>
     
       <li class="post">
         <a href="/blog/2013/01/03/kai-shi-shi-yong-octopress/">开始使用Octopress</a>
@@ -210,6 +217,10 @@ sync  0.00s user 0.02s system 0% cpu 4.927 total
     
       <li class="post">
         <a href="/blog/2011/12/14/a-tale-of-screen-ram/">A Tale of Screen RAM</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/27/starting-from-nonhexie-Android-in-China/">从不和谐的 Android 市场开始扯</a>
       </li>
     
   </ul>
@@ -249,6 +260,22 @@ sync  0.00s user 0.02s system 0% cpu 4.927 total
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'tifan-net';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://tifan.net/blog/2012/06/08/disappointing-aliyun/';
+        var disqus_url = 'http://tifan.net/blog/2012/06/08/disappointing-aliyun/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

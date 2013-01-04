@@ -1,5 +1,5 @@
 ---
-comments: false
+comments: true
 date: 2011-12-15 00:16:14
 layout: post
 published: true
@@ -16,6 +16,8 @@ title: A Tale of Screen RAM
   * 这种机制可以节约电量
   * 这种机制主要应用在高端手机上
   * 这种机制的成本是 80 元人民币，约合 $15
+
+<!-- more -->
 
 暂且抛开这种机制在一边，我们看一看 LCD 的显示原理。  
 

@@ -1,5 +1,5 @@
 ---
-comments: false
+comments: true
 date: 2010-06-18 20:16:30
 layout: post
 published: true
@@ -14,6 +14,8 @@ title: IBM服务器——谁用谁知道
 这是一台IBM eServer xSeries 255，1个4核Xeon MP，7个U的大家伙。有个Adaptec AIC-7899 SCSI控制器，装了12块300GB硬盘，两个光卡一个电卡，电卡似乎还是Broadcom 5703的破卡。内存呢，标配了4×256MB DDR1，后来买了8×1GB DDR1内存，总共应该是9GB----插上确实是9GB，然后过两天一看，成8GB了，再过两天，4GB，然后呢，2GB，最后呢，1GB。
 
 于是，拔内存。似乎确实解决了一阵子事情，能稳定在4GB了，然后呢……
+
+<!-- more -->
 
 我们就用它做3P下载站的服务器了。青岛大学内网用户访问http://dl.osqdu.org/可以访问3P下载站。似乎开始的时候一切正常。拆下了RAID卡。用Solaris嘛，当然做了RAIDZ。杯具就从此开始了。大家都知道zfs吃内存的，于是机器就三天两头重启。每次打开KVM，总显示着一大堆ZFS相关的错误。于是，不得已，转移数据，折腾了好几个移动硬盘和服务器，终于将大约2TB的数据折腾出来了。然后，配上了UFS，毕竟UFS这么多年了，肯定没问题的，接受了时间的考验。BTW，fat能用这么长时间纯属意外，当然微软最后偷了点VMS 70年代的技术，搞出来一个"New Technology File System" aka NTFS....
 

@@ -1,5 +1,5 @@
 ---
-comments: false
+comments: true
 date: 2009-11-07 23:42:04
 layout: post
 published: true
@@ -8,6 +8,8 @@ title: 刷SPL致死的T-Mobile G1怎样恢复加速传感器
 ---
 
 手贱不可怕，怕的是手贱以后没有办法挽救。
+
+<!-- more -->
 
 八月份我买了一台T-Mobile G1，当然看中的是Linux操作系统和强大的硬件配置，没想到问题也不是太少，总体来讲不太适合生产用手机，倒是适合折腾。
 

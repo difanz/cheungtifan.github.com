@@ -86,6 +86,8 @@
 
 <time datetime="2010-06-18T13:16:30-07:00" pubdate data-updated="true">Jun 18<span>th</span>, 2010</time>
         
+         | <a href="#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -98,6 +100,9 @@
 <p>这是一台IBM eServer xSeries 255，1个4核Xeon MP，7个U的大家伙。有个Adaptec AIC-7899 SCSI控制器，装了12块300GB硬盘，两个光卡一个电卡，电卡似乎还是Broadcom 5703的破卡。内存呢，标配了4×256MB DDR1，后来买了8×1GB DDR1内存，总共应该是9GB&#8212;-插上确实是9GB，然后过两天一看，成8GB了，再过两天，4GB，然后呢，2GB，最后呢，1GB。</p>
 
 <p>于是，拔内存。似乎确实解决了一阵子事情，能稳定在4GB了，然后呢……</p>
+
+<!-- more -->
+
 
 <p>我们就用它做3P下载站的服务器了。青岛大学内网用户访问http://dl.osqdu.org/可以访问3P下载站。似乎开始的时候一切正常。拆下了RAID卡。用Solaris嘛，当然做了RAIDZ。杯具就从此开始了。大家都知道zfs吃内存的，于是机器就三天两头重启。每次打开KVM，总显示着一大堆ZFS相关的错误。于是，不得已，转移数据，折腾了好几个移动硬盘和服务器，终于将大约2TB的数据折腾出来了。然后，配上了UFS，毕竟UFS这么多年了，肯定没问题的，接受了时间的考验。BTW，fat能用这么长时间纯属意外，当然微软最后偷了点VMS 70年代的技术，搞出来一个&#8221;New Technology File System&#8221; aka NTFS&#8230;.</p>
 
@@ -172,6 +177,12 @@
   </footer>
 </article>
 
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
 </div>
 
 <aside class="sidebar">
@@ -179,10 +190,6 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/01/03/kai-shi-shi-yong-octopress/">开始使用Octopress</a>
-      </li>
     
       <li class="post">
         <a href="/blog/2013/01/03/kai-shi-shi-yong-octopress/">开始使用Octopress</a>
@@ -198,6 +205,10 @@
     
       <li class="post">
         <a href="/blog/2011/12/14/a-tale-of-screen-ram/">A Tale of Screen RAM</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/27/starting-from-nonhexie-Android-in-China/">从不和谐的 Android 市场开始扯</a>
       </li>
     
   </ul>
@@ -237,6 +248,22 @@
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'tifan-net';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://tifan.net/blog/2010/06/18/ibm-server-sucks/';
+        var disqus_url = 'http://tifan.net/blog/2010/06/18/ibm-server-sucks/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

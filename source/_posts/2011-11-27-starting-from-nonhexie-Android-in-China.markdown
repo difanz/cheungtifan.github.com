@@ -1,5 +1,5 @@
 ---
-comments: false
+comments: true
 date: 2011-11-27 19:43:31
 layout: post
 published: true
@@ -10,6 +10,8 @@ title: 从不和谐的 Android 市场开始扯
 最近Android是越来越火了。火的背后我们也看到了很多的不和谐。
 
 09年的时候，我开始使用的 Android 手机。那是一个黑暗的时代----当时我在使用中国移动的手机卡，流量有限，每月 80MB，20大洋。好在墙并没这么厉害，拿到手机以后，上 Market 下载 Google Pinyin，输入中文一切正常，倒也可以用了。不过，因为 Android 当时刚刚出现不久，中国基本没用户，移动互联网基本靠 WAP，内容基本是 WML，我需要一个支持 WML 的浏览器。想过写一个 WML Transformer 到 HTML，最终没写，因此上网看电脑网站舍不得，只能上手机校内、推特。想用 QQ? 没门。
+
+<!-- more -->
 
 于是，有了基于 Java 模拟器 (MicroEmulator) 的 Opera Mini，还可以直接穿墙。用的不亦乐乎。
 

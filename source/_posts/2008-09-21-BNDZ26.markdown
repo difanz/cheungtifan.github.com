@@ -1,5 +1,5 @@
 ---
-comments: false
+comments: true
 date: 2008-09-21 21:32:30
 layout: post
 published: true
@@ -8,6 +8,8 @@ title: SFD08 青岛站
 ---
 
 今天，在青岛大学举行的"世界软件自由日"是由青岛 Linux 用户组(Qingdao LUG)和OSQDU主办，其他主办单位包括北京Linux 用户组(BLUG)和中国开源软件推进联盟(COPU)，信息产业部软件与集成电路促进中心(CSIP)，青岛大学青年学生会。主要赞助商有SUN Microsystems, OpenSUSE等。
+
+<!-- more -->
 
 "世界软件自由日"（SFD Software Freedom Day）" 源自Ubuntu 计划，是一个全球性庆祝"自由和开源软件"(FOSS)的日子。这次活动的目标旨在向中国年轻一代和他们的指导者传播日常生活中使用"自由和开源软件"的好处。  
 
