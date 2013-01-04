@@ -2,7 +2,7 @@
 comments: false
 date: 2010-04-21 19:26:25
 layout: post
-published: false
+published: true
 slug: yantai-presentation
 title: OSQDU烟台大学讲座活动总结
 ---

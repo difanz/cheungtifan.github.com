@@ -2,7 +2,7 @@
 comments: false
 date: 2011-12-15 00:16:14
 layout: post
-published: false
+published: true
 slug: a-tale-of-screen-ram
 title: A Tale of Screen RAM
 ---

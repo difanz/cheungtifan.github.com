@@ -2,7 +2,7 @@
 comments: false
 date: 2011-11-27 19:43:31
 layout: post
-published: false
+published: true
 slug: starting-from-nonhexie-Android-in-China
 title: 从不和谐的 Android 市场开始扯
 ---

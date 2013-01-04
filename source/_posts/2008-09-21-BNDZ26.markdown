@@ -2,7 +2,7 @@
 comments: false
 date: 2008-09-21 21:32:30
 layout: post
-published: false
+published: true
 slug: sfd-08-qingdao
 title: SFD08 青岛站
 ---

@@ -2,7 +2,7 @@
 comments: false
 date: 2012-06-23 06:21:33
 layout: post
-published: false
+published: true
 slug: thoughts-about-spambots
 title: 抓恶意爬虫以及防止恶意爬虫的一点想法
 ---

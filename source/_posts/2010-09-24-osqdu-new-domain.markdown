@@ -2,7 +2,7 @@
 comments: false
 date: 2010-09-24 21:14:13
 layout: post
-published: false
+published: true
 slug: osqdu-new-domain
 title: OSQDU域名永久更改为www.osqdu.org
 ---

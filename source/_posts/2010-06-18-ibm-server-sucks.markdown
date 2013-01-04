@@ -2,7 +2,7 @@
 comments: false
 date: 2010-06-18 20:16:30
 layout: post
-published: false
+published: true
 slug: ibm-server-sucks
 title: IBM服务器——谁用谁知道
 ---

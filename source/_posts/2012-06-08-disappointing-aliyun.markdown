@@ -2,7 +2,7 @@
 comments: false
 date: 2012-06-08 12:09:32
 layout: post
-published: false
+published: true
 slug: disappointing-aliyun
 title: 令人失望的阿里云
 ---

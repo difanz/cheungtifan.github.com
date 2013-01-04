@@ -2,7 +2,7 @@
 comments: false
 date: 2009-11-07 23:42:04
 layout: post
-published: false
+published: true
 slug: htc-dream-bricked-spl
 title: 刷SPL致死的T-Mobile G1怎样恢复加速传感器
 ---
