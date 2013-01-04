@@ -3,11 +3,11 @@
 # ----------------------- #
 
 url: http://tifan.net
-title: tifan.net
+title: tifan
 subtitle: 没意思的东西
 author: tifan
 simple_search: http://google.com/search
-description:
+description: tifan.net
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
