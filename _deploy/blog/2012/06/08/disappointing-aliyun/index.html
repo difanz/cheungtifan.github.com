@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>令人失望的阿里云 - tifan</title>
+  <meta name="author" content="tifan">
+
+  
+  <meta name="description" content="阿里云果然烂透了，从用的第一天起，就充满了杯具。 爱范儿迁移到阿里云的第一天早晨9点，阿里云就开始挂了，无奈之下，切换回了日本Linode，看了看，似乎是我自己的配置问题，后来因为人太多，10M小水管不够用就没人可以访问了，于是我们上了又拍云cdn，感觉效果不错，访问速度快了很多，也启用了 cdn &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://tifan.net/blog/2012/06/08/disappointing-aliyun/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="tifan" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">tifan</a></h1>
+  
+    <h2>没意思的东西</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:tifan.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">令人失望的阿里云</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-08T05:09:32-07:00" pubdate data-updated="true">Jun 8<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>阿里云果然烂透了，从用的第一天起，就充满了杯具。</p>
+
+<p>爱范儿迁移到阿里云的第一天早晨9点，阿里云就开始挂了，无奈之下，切换回了日本Linode，看了看，似乎是我自己的配置问题，后来因为人太多，10M小水管不够用就没人可以访问了，于是我们上了又拍云cdn，感觉效果不错，访问速度快了很多，也启用了 cdn.ifanr.cn 的 cdn 域名。</p>
+
+<p>于是，修 PHP，改 Wordpress，又搬了回去，似乎问题没有了，团队成员也都很开心，速度变快了&#8212;-除了我，成天被 GFW RESET…</p>
+
+<!-- more -->
+
+
+<p>某天，发现 PHP 确实有问题，于是让 PHP 吐个核看看，写到磁盘里。我们用了 APC 做 Object Cache，512M 的 shm，当然这些也会被 dump 出来，8个 PHP-FPM 进程一共是 4GB。写 core 不要紧，一看才知道 IO 居然这么差，写 core 的时候 IOWAIT 居然到了 100%，愣是挂了半个小时，这半个小时 ssh 都登陆不进去，后来从 collectd 里看到，居然 loadavg 到了三十几，所有的 CPU 全都在等 IO，所有的 read() 全都被 block 住了&#8211;你妹！</p>
+
+<p>我有个坏毛病，没事儿爱输入 sync 玩，某次输入一看，怎么这么久！</p>
+
+<pre><code>[L:root@ifanr-cn] ~# time sync
+sync  0.00s user 0.02s system 0% cpu 4.927 total
+</code></pre>
+
+<p>于是，跑个 hdparm 看了看，一看不要紧&#8212;-</p>
+
+<p>  [L:root@ifanr-cn] ~# hdparm -t /dev/xvdb1
+  /dev/xvdb1:
+  Timing buffered disk reads:  74 MB in  3.11 seconds =  23.76 MB/se`</p>
+
+<p>那么，我们来 iostat -x 看看吧</p>
+
+<pre><code>avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.84    0.00    0.63   35.53    0.00   62.00
+    Device:         rrqm/s   wrqm/s     r/s     w/s   rsec/s   wsec/s avgrq-sz avgqu-sz   await  svctm  %util
+    xvda              0.00   810.00    0.00  202.50     0.00 16136.00    79.68   143.56  719.75   4.94 100.00
+    xvdb              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+    scd0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+
+    avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+               1.36    0.00    0.49   28.39    0.06   69.70
+
+    Device:         rrqm/s   wrqm/s     r/s     w/s   rsec/s   wsec/s avgrq-sz avgqu-sz   await  svctm  %util
+    xvda              0.00   748.00    0.00  198.00     0.00 15776.00    79.68   143.96  746.70   5.05 100.00
+    xvdb              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+    scd0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00   0.00   0.00
+</code></pre>
+
+<p>上面的数据是正常数据哦亲！</p>
+
+<p>无奈之下，<a href="http://www.weibo.com/1039929634/ynqS5zk99">发了条微博</a>，一看回复，原来大家都有这毛病！</p>
+
+<p>本来觉得阿里还算是个正儿八经的公司，现在一看，连个盘柜都不舍得买么？！就连我校的好多年前买来的日立光纤存储都能到 400MB/s 好不好（虽然有 RAID）！</p>
+
+<p>吐槽完毕，反正阿里云和IBM一样，以忽悠为主。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">tifan</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-08T05:09:32-07:00" pubdate data-updated="true">Jun 8<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tifan.net/blog/2012/06/08/disappointing-aliyun/" data-via="tifan" data-counturl="http://tifan.net/blog/2012/06/08/disappointing-aliyun/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/14/a-tale-of-screen-ram/" title="Previous Post: A Tale of Screen RAM">&laquo; A Tale of Screen RAM</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/06/22/thoughts-about-spambots/" title="Next Post: 抓恶意爬虫以及防止恶意爬虫的一点想法">抓恶意爬虫以及防止恶意爬虫的一点想法 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/03/kai-shi-shi-yong-octopress/">开始使用Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/22/thoughts-about-spambots/">抓恶意爬虫以及防止恶意爬虫的一点想法</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/08/disappointing-aliyun/">令人失望的阿里云</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/14/a-tale-of-screen-ram/">A Tale of Screen RAM</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/27/starting-from-nonhexie-Android-in-China/">从不和谐的 Android 市场开始扯</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("tifan", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/tifan" class="twitter-follow-button" data-show-count="false">Follow @tifan</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - tifan -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'tifan-net';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://tifan.net/blog/2012/06/08/disappointing-aliyun/';
+        var disqus_url = 'http://tifan.net/blog/2012/06/08/disappointing-aliyun/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
