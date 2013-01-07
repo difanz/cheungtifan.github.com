@@ -4,11 +4,11 @@
   <title><![CDATA[tifan]]></title>
   <link href="http://tifan.net/atom.xml" rel="self"/>
   <link href="http://tifan.net/"/>
-  <updated>2013-01-03T18:00:18-08:00</updated>
+  <updated>2013-01-07T01:13:59-08:00</updated>
   <id>http://tifan.net/</id>
   <author>
     <name><![CDATA[tifan]]></name>
-    
+    <email><![CDATA[alex@osqdu.org]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
