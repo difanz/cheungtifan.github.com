@@ -20,5 +20,5 @@ PHP，经常使用的操作系统是 Mac OS X, Solaris, Debian Linux, FreeBSD, W
 
   [Vi IMproved]: https://bitbucket.org/tifan/vimrc
   [Google Inc.]: http://www.google.com/
-  [Bitbucket]: http://code.difan.org.cn/
+  [Bitbucket]: http://code.tifan.org/
   [爱范儿]: http://www.ifanr.com/
