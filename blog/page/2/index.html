@@ -7,7 +7,7 @@
 	<meta name="author" content="tifan">
 
 	
-	<meta name="description" content="考完托福，从 @kDolphin 那里看到了小米提出的新概念&#8212;-屏幕 RAM。作为一个对嵌入式一知半解，也玩过单片机的化学计算机好人修电脑系学生，我对此概念十分不解&#8212;-莫非来美国大农村呆了一年就这么赶不上科技的潮流了？ 于是，根据小米等各种论坛的线索，我大致归纳了&# &hellip;">
+	<meta name="description" content="这几天，我在思考一个问题，什么产品，可能有一个潜在的商业模型，同时又符合中国国情？这个产品，必然是和计算机（倒不仅限于互联网）相关，因为这是我最熟悉的领域。因此，有了下面的一些想法，还在慢慢完善，今天先总结一下最近几个月的一些经验和教训以及思考， &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -77,20 +77,6 @@
 </header>
 	
 		
-<div id="banner" class="inner">
-	<div class="container">
-		<ul class="feed"></ul>
-	</div>
-	<small><a href="http://twitter.com/tifan">tifan</a> @ <a href="http://twitter.com">Twitter</a></small>
-	<div class="loading">Loading...</div>
-</div>
-<script src="/javascripts/twitter.js"></script>
-<script type="text/javascript">
-	(function($){
-		$('#banner').getTwitterFeed('tifan', 5, false);
-	})(jQuery);
-</script>
-
 	
 	<div id="content" class="inner">
 
@@ -98,27 +84,16 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2011/12/14/a-tale-of-screen-ram/">
+		<a href="/blog/2012/11/01/product-and-china/">
 		
-			A Tale of Screen RAM</a>
+			做产品与中国国情（上）：创新以及产品为何失败</a>
 	</h2>
 	<div class="entry-content">
-		<p>考完托福，从 @kDolphin 那里看到了小米提出的新概念&#8212;-屏幕 RAM。作为一个对嵌入式一知半解，也玩过单片机的<del>化学</del><del>计算机</del>好人修电脑系学生，我对此概念十分不解&#8212;-莫非来美国大农村呆了一年就这么赶不上科技的潮流了？</p>
-
-<p>于是，根据小米等各种论坛的线索，我大致归纳了&#8221;屏幕RAM&#8221;的几个特点：</p>
-
-<ul>
-<li>这是一种缓存机制，使得 GPU 只需要运算 delta 值。在没有此机制的屏幕上绘图要求 GPU 不断的工作，产生图形</li>
-<li>这种机制可以得到性能的提升，原因是 GPU 不需要 concentrace on 不断的渲染相同的图像</li>
-<li>这种机制可以节约电量</li>
-<li>这种机制主要应用在高端手机上</li>
-<li>这种机制的成本是 80 元人民币，约合 $15</li>
-</ul>
-
+		<p>这几天，我在思考一个问题，什么产品，可能有一个潜在的商业模型，同时又符合中国国情？这个产品，必然是和计算机（倒不仅限于互联网）相关，因为这是我最熟悉的领域。因此，有了下面的一些想法，还在慢慢完善，今天先总结一下最近几个月的一些经验和教训以及思考，过几天大概还会继续写一写产品怎么做以及中国国情到底是什么。</p>
 
 
 		
-		<a href="/blog/2011/12/14/a-tale-of-screen-ram/" class="more-link">Read on &rarr;</a>
+		<a href="/blog/2012/11/01/product-and-china/" class="more-link">Read on &rarr;</a>
 	</div>
 
 
@@ -135,12 +110,12 @@
   
 
 
-<time datetime="2011-12-14T16:16:14-08:00" pubdate data-updated="true">Dec 14<span>th</span>, 2011</time></div>
+<time datetime="2012-11-01T14:00:00-07:00" pubdate data-updated="true">Nov 1<span>st</span>, 2012</time></div>
 	<div class="tags">
 
 </div>
 	
-		<span class="comments"><a href="/blog/2011/12/14/a-tale-of-screen-ram//blog/page/2/index.html#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2012/11/01/product-and-china//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
@@ -148,18 +123,18 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2011/11/27/starting-from-nonhexie-Android-in-China/">
+		<a href="/blog/2012/06/22/thoughts-about-spambots/">
 		
-			从不和谐的 Android 市场开始扯</a>
+			抓恶意爬虫以及防止恶意爬虫的一点想法</a>
 	</h2>
 	<div class="entry-content">
-		<p>最近Android是越来越火了。火的背后我们也看到了很多的不和谐。</p>
+		<p>爬虫很讨厌。</p>
 
-<p>09年的时候，我开始使用的 Android 手机。那是一个黑暗的时代&#8212;-当时我在使用中国移动的手机卡，流量有限，每月 80MB，20大洋。好在墙并没这么厉害，拿到手机以后，上 Market 下载 Google Pinyin，输入中文一切正常，倒也可以用了。不过，因为 Android 当时刚刚出现不久，中国基本没用户，移动互联网基本靠 WAP，内容基本是 WML，我需要一个支持 WML 的浏览器。想过写一个 WML Transformer 到 HTML，最终没写，因此上网看电脑网站舍不得，只能上手机校内、推特。想用 QQ? 没门。</p>
+<p>为什么这么讨厌爬虫呢？是因为这玩意儿会让我的缓存全部失效。你想，平时大部分用户都是访问网站首页的几篇文章而已，突然来个爬虫，爬掉你的整个网站。例如爱范儿，几千篇文章，一篇一篇的爬下去，吃 CPU 不说，爬到后面，缓存干脆命中不到，只好去查询 MySQL，查询是要费时间的，也是要跑 TCP 的， overhead 很大的亲。如果爬的频率一高，机器说不定就会宕机了。</p>
 
 
 		
-		<a href="/blog/2011/11/27/starting-from-nonhexie-Android-in-China/" class="more-link">Read on &rarr;</a>
+		<a href="/blog/2012/06/22/thoughts-about-spambots/" class="more-link">Read on &rarr;</a>
 	</div>
 
 
@@ -176,12 +151,12 @@
   
 
 
-<time datetime="2011-11-27T11:43:31-08:00" pubdate data-updated="true">Nov 27<span>th</span>, 2011</time></div>
+<time datetime="2012-06-22T23:21:33-07:00" pubdate data-updated="true">Jun 22<span>nd</span>, 2012</time></div>
 	<div class="tags">
 
 </div>
 	
-		<span class="comments"><a href="/blog/2011/11/27/starting-from-nonhexie-Android-in-China//blog/page/2/index.html#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2012/06/22/thoughts-about-spambots//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
@@ -189,18 +164,20 @@
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/blog/2010/09/24/osqdu-new-domain/">
+		<a href="/blog/2012/06/08/disappointing-aliyun/">
 		
-			OSQDU域名永久更改为www.osqdu.org</a>
+			令人失望的阿里云</a>
 	</h2>
 	<div class="entry-content">
-		<p>昨天晚上，我突然得知，OSQDU 的域名罹难，状态已经变成了 clientHold 。打电话给中国万网，答复是需要提交身份证，等待漫长的审核。</p>
+		<p>阿里云果然烂透了，从用的第一天起，就充满了杯具。</p>
 
-<p>国内的政策，很无奈，我又没办法提交身份证件，于是这域名就似乎拿不回来了。最后，Frank注册了10年的www.osqdu.org。</p>
+<p>爱范儿迁移到阿里云的第一天早晨9点，阿里云就开始挂了，无奈之下，切换回了日本Linode，看了看，似乎是我自己的配置问题，后来因为人太多，10M小水管不够用就没人可以访问了，于是我们上了又拍云cdn，感觉效果不错，访问速度快了很多，也启用了 cdn.ifanr.cn 的 cdn 域名。</p>
+
+<p>于是，修 PHP，改 Wordpress，又搬了回去，似乎问题没有了，团队成员也都很开心，速度变快了&#8212;-除了我，成天被 GFW RESET…</p>
 
 
 		
-		<a href="/blog/2010/09/24/osqdu-new-domain/" class="more-link">Read on &rarr;</a>
+		<a href="/blog/2012/06/08/disappointing-aliyun/" class="more-link">Read on &rarr;</a>
 	</div>
 
 
@@ -217,12 +194,12 @@
   
 
 
-<time datetime="2010-09-24T14:14:13-07:00" pubdate data-updated="true">Sep 24<span>th</span>, 2010</time></div>
+<time datetime="2012-06-08T05:09:32-07:00" pubdate data-updated="true">Jun 8<span>th</span>, 2012</time></div>
 	<div class="tags">
 
 </div>
 	
-		<span class="comments"><a href="/blog/2010/09/24/osqdu-new-domain//blog/page/2/index.html#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2012/06/08/disappointing-aliyun//blog/page/2/index.html#disqus_thread">Comments</a></span>
 	
 </div></article>
 
